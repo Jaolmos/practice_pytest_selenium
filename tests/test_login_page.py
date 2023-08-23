@@ -2,6 +2,7 @@ import time
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from conftest import driver
 
 
 
@@ -9,9 +10,9 @@ class TestPositiveScenarios:
 
     @pytest.mark.login
     @pytest.mark.positive
-    def test_positive_login(self):
+    def test_positive_login(self, driver):
         # Open Browser
-        driver = webdriver.Chrome()
+        #driver = webdriver.Chrome()
         time.sleep(4)
 
         # Go to webpage "https://practicetestautomation.com/practice-test-login/"
