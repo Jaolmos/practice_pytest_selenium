@@ -4,13 +4,24 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
+
+@pytest.fixture()
+def driver():
+    print("Creating Chrome Driver")
+    my_driver = webdriver.Chrome()
+    yield my_driver
+    print("Closing Chrome Driver")
+    my_driver.quit()
+
+
+
 class TestNegativeScenarios:
 
     @pytest.mark.login
     @pytest.mark.negative
-    def test_negative_username(self):
+    def test_negative_username(self, driver):
         # Open page
-        driver = webdriver.Chrome()
+        # driver = webdriver.Chrome()
         time.sleep(2)
 
         # Go to webpage "https://practicetestautomation.com/practice-test-login/"
@@ -40,9 +51,9 @@ class TestNegativeScenarios:
 
     @pytest.mark.login
     @pytest.mark.negative
-    def test_negative_password(self):
+    def test_negative_password(self, driver):
         # Open page
-        driver = webdriver.Chrome()
+        # driver = webdriver.Chrome()
         time.sleep(2)
 
         # Go to webpage "https://practicetestautomation.com/practice-test-login/"
