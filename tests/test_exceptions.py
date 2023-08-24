@@ -10,12 +10,12 @@ class TestExceptions:
     def test_no_such_element_exception(self, driver):
         # Open page
         driver.get("https://practicetestautomation.com/practice-test-exceptions/")
-        time.sleep(6)
+        #time.sleep(6)
 
         # Click Add button
         add_button_locator = driver.find_element(By.ID, "add_btn")
         add_button_locator.click()
-        time.sleep(10)
+        #time.sleep(10)
 
         # Verify Row 2 input field is displayed
         row_2_input_locator = driver.find_element(By.XPATH, "//div[@id='row2']/input")
